@@ -1,0 +1,17 @@
+function modifyResponse(args) {
+  const { requestData, responseJSON } = args;
+
+  // Check if requestData has the key-value pair "username": "PLAYER_NAME"
+  // Replace "PLAYER_NAME" with the name of the player you want to modify (their name in the game)
+  // you can duplicate the if statement below to include multiple players
+  if (requestData && requestData.username === "Most Annoying User") {
+    
+    // Modify responseJSON
+    // story is what the bot will read out loud
+    // isSurvived is if the player survives in the game, set to false if you want the user to lose
+    return { ...responseJSON, story: "amongusssy", isSurvived: true };
+  }
+
+  // Return the original response if no modification is needed
+  return responseJSON;
+}
